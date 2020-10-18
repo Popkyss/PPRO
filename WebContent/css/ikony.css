@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/* ikony tlacitek */
+/* ------------------------------------------------------------------------- */
+.LogoffBtn 			{ background-image: url(../images/ikony/logoff.png); }
+.SpustitFiltrBtn 	{ background-image: url(../images/ikony/spustitfiltr.png); }
+.SmazatBtn 			{ background-image: url(../images/ikony/smazat.png); }
+.BrowseBtn 			{ background-image: url(../images/ikony/browse.png); }
+.NovyBtn 			{ background-image: url(../images/ikony/novy.png); }
+.EditBtn 			{ background-image: url(../images/ikony/edit.png); }
+.PdfBtn 			{ background-image: url(../images/ikony/pdf.png); }
+.DuplikaceBtn		{ background-image: url(../images/ikony/duplikace.png); }
+.SaveBtn 			{ background-image: url(../images/ikony/save.png); }
+.ImportBtn 			{ background-image: url(../images/ikony/importDB.png); }
+.ExportXlsBtn 		{ background-image: url(../images/ikony/xls.png); }
+.ExportTxtBtn 		{ background-image: url(../images/ikony/txt.png); }
+.ExportBtn 			{ background-image: url(../images/ikony/exportDB.png); }
+.ZpetBtn 			{ background-image: url(../images/ikony/zpet.png); }
+.OtevritBtn 		{ background-image: url(../images/ikony/open.png); }
+.RozbalitBtn 		{ background-image: url(../images/ikony/rozbalit.png); }
+.SbalitBtn 			{ background-image: url(../images/ikony/sbalit.png); }
+.GumaBtn 			{ background-image: url(../images/ikony/guma.png); }
+.VyhledatBtn 		{ background-image: url(../images/ikony/vyhledat.png); }
+.NahoruBtn	 		{ background-image: url(../images/ikony/nahoru.png); }
+.DoluBtn 			{ background-image: url(../images/ikony/dolu.png); }
+.ZrusitBtn 			{ background-image: url(../images/ikony/zrusit.png); }
+.Nasledujicistr2Btn { background-image: url(../images/ikony/nasledujicistr2.png); }
+.Zpet2Btn 			{ background-image: url(../images/ikony/zpet2.png); }
+.PrintPreviewBtn 	{ background-image: url(../images/ikony/print_preview.png); }
+.OkBtn 				{ background-image: url(../images/ikony/ok.png); }
+.DomuBtn 			{ background-image: url(../images/ikony/domu.png); }
+.InfoBtn 			{ background-image: url(../images/ikony/sys_dialog_info.png); }
+.VpredBtn 			{ background-image: url(../images/ikony/nasledujicistr.png); }
+.GrafBtn 			{ background-image: url(../images/ikony/export_graf.png);}
+.VybelitBtn         { background-image: url(../images/ikony/vybelit.png); }
+.PrintBtn			{ background-image: url(../images/ikony/print.png); }
+.CleanBtn			{ background-image: url(../images/ikony/clean.png); }
+.PersonBtnM			{ background-image: url(../images/ikony/person.png); }
+.CalendarBtn		{ background-image: url(../images/ikony/calendar.png); }
+.ModraBtn			{ background-image: url(../images/ikony/modra.png); }
+.ZelenaBtn			{ background-image: url(../images/ikony/zelena.png); }
+.ZamekBtn 			{ background-image: url(../images/ikony/zamek.png); }
+
+/* mala tlacitka */
+.LogoffBtnM 		{ background-image: url(../images/ikony/16x16/logoff.png); }
+.SpustitFiltrBtnM 	{ background-image: url(../images/ikony/16x16/spustitfiltr.png); }
+.SmazatBtnM 		{ background-image: url(../images/ikony/16x16/smazat.png); }
+.BrowseBtnM 		{ background-image: url(../images/ikony/16x16/browse.png); }
+.NovyBtnM 			{ background-image: url(../images/ikony/16x16/novy.png); }
+.EditBtnM 			{ background-image: url(../images/ikony/16x16/edit.png); }
+.DuplikaceBtnM 		{ background-image: url(../images/ikony/16x16/duplikace.png); }
+.SaveBtnM 			{ background-image: url(../images/ikony/16x16/save.png); }
+.ImportBtnM 		{ background-image: url(../images/ikony/16x16/importDB.png); }
+.OtevritBtnM 		{ background-image: url(../images/ikony/16x16/open.png); }
+.RozbalitBtnM 		{ background-image: url(../images/ikony/16x16/rozbalit.png); }
+.SbalitBtnM 		{ background-image: url(../images/ikony/16x16/sbalit.png); }
+.GumaBtnM 			{ background-image: url(../images/ikony/16x16/guma.png); }
+.ZrusitBtnM 		{ background-image: url(../images/ikony/16x16/zrusit.png); }
+.Nasledujicistr2BtnM{ background-image: url(../images/ikony/16x16/nasledujicistr2.png); }
+.VyhledatBtnM 		{ background-image: url(../images/ikony/16x16/vyhledat.png); }
+.NahoruBtnM 		{ background-image: url(../images/ikony/16x16/nahoru.png); }
+.DoluBtnM 			{ background-image: url(../images/ikony/16x16/dolu.png); }
+.PdfBtnM 			{ background-image: url(../images/ikony/16x16/pdf.png); }
+.PrintPreviewBtnM 	{ background-image: url(../images/ikony/16x16/print_preview.png); }
+.ExportXlsBtnM 		{ background-image: url(../images/ikony/16x16/xls.png); }
+.ExportTxtBtnM 		{ background-image: url(../images/ikony/16x16/txt.png); }
+.ExportBtnM			{ background-image: url(../images/ikony/16x16/exportDB.png); }
+.OkBtnM 			{ background-image: url(../images/ikony/16x16/ok.png); }
+.DomuBtnM 			{ background-image: url(../images/ikony/16x16/domu.png); }
+.InfoBtnM 			{ background-image: url(../images/ikony/16x16/sys_dialog_info.png); }
+.VpredBtnM 			{ background-image: url(../images/ikony/16x16/nasledujicistr.png); }
+.GrafBtnM 			{ background-image: url(../images/ikony/16x16/export_graf.png);}
+.Zpet2BtnM 			{ background-image: url(../images/ikony/16x16/zpet2.png); }
+.ZpetBtnM 			{ background-image: url(../images/ikony/16x16/zpet.png); }
+.VybelitBtnM        { background-image: url(../images/ikony/16x16/vybelit.png); }
+.PrintBtnM			{ background-image: url(../images/ikony/16x16/print.png); }
+.CleanBtnM			{ background-image: url(../images/ikony/16x16/clean.png); }
+.PersonBtnM			{ background-image: url(../images/ikony/16x16/person.png); }
+.CalendarBtnM		{ background-image: url(../images/ikony/16x16/calendar.png); }
+.VpravoBtnM 		{ background-image: url(../images/ikony/16x16/vpravo.png); }
+.VlevoBtnM 			{ background-image: url(../images/ikony/16x16/vlevo.png); }
+.ModraBtnM			{ background-image: url(../images/ikony/16x16/modra.png); }
+.ZelenaBtnM			{ background-image: url(../images/ikony/16x16/zelena.png); }
+

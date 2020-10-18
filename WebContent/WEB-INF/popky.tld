@@ -1,0 +1,2944 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+	<tlib-version>1.0</tlib-version>
+	<short-name>popkyss</short-name>
+	<uri>popkyss.tld</uri>
+
+	<!-- ************************************************************************* -->
+	<!-- TAGY -->
+	<!-- ************************************************************************* -->
+
+	<!-- **************** LONG TEXT **************** -->
+	<tag>
+		<description>Tag pro vypsani seznamu napr. ve strankovanem seznamu, pokud je seznam delsi nez maximalni 
+    		povolena delka, pak se orizne, doplni tremi teckami a cely seznam se da do titulku</description>
+		<name>longList</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.LongList</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>hodnota seznamu</description>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.List</type>
+		</attribute>
+
+		<attribute>
+			<description>maximalni delka seznamu</description>
+			<name>maxItem</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Integer</type>
+		</attribute>
+
+		<attribute>
+			<description>priznak, zda se ma pouzit titulek, pokud je prekrocena maximalni delka seznamu. Pokud je true,
+				coz je zakladni chovani, je cely seznam v titulku, zobrazena je pouze cast (maxItem - 3 polozky).
+				Pokud je false, pak neni nastaven titulek textu</description>
+			<name>useTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the pgae. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+	<!-- **************** Strankovani ****************** -->
+	<tag>
+		<description>Tag pro vypsani ovladani strankovaneho seznamu, ktery resi veskere akce formou submit - musi byt vlozen do tagu form, jinak nebude fungovat</description>
+		<name>strankovani</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.SubmitStrankovaniTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Trida kontroleru aktualniho pozadavku, v JSP lze k objektu kontroleru pristoupit pres nazev atributu
+				"actionBean"</description>
+			<name>controller</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>com.popkyss.sweetShop.setting.ASeznamAction</type>
+		</attribute>
+
+	</tag>
+
+
+	<!-- **************** FOR EACH ****************** -->
+	<tag>
+		<description>
+	The basic iteration tag, accepting many different
+        collection types and supporting subsetting and other
+        functionality
+    </description>
+		<name>forEach</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.NoLeakForEachTag</tag-class>
+		<tei-class>org.apache.taglibs.standard.tei.ForEachTEI</tei-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description>
+Collection of items to iterate over.
+        </description>
+			<name>items</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+			<deferred-value>
+				<type>java.lang.Object</type>
+			</deferred-value>
+		</attribute>
+		<attribute>
+			<description>
+If items specified:
+Iteration begins at the item located at the
+specified index. First item of the collection has
+index 0.
+If items not specified:
+Iteration begins with index set at the value
+specified.
+        </description>
+			<name>begin</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description>
+If items specified:
+Iteration ends at the item located at the
+specified index (inclusive).
+If items not specified:
+Iteration ends when index reaches the value
+specified.
+        </description>
+			<name>end</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description>
+Iteration will only process every step items of
+the collection, starting with the first one.
+        </description>
+			<name>step</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description>
+Name of the exported scoped variable for the
+current item of the iteration. This scoped
+variable has nested visibility. Its type depends
+on the object of the underlying collection.
+        </description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+Name of the exported scoped variable for the
+status of the iteration. Object exported is of type
+javax.servlet.jsp.jstl.core.LoopTagStatus. This scoped variable has nested
+visibility.
+        </description>
+			<name>varStatus</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+	Iterates over tokens, separated by the supplied delimeters
+    </description>
+		<name>forTokens</name>
+		<tag-class>org.apache.taglibs.standard.tag.rt.core.ForTokensTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description>
+String of tokens to iterate over.
+        </description>
+			<name>items</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+			<deferred-value>
+				<type>java.lang.String</type>
+			</deferred-value>
+		</attribute>
+		<attribute>
+			<description>
+The set of delimiters (the characters that
+separate the tokens in the string).
+        </description>
+			<name>delims</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+Iteration begins at the token located at the
+specified index. First token has index 0.
+        </description>
+			<name>begin</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description>
+Iteration ends at the token located at the
+specified index (inclusive).
+        </description>
+			<name>end</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description>
+Iteration will only process every step tokens
+of the string, starting with the first one.
+        </description>
+			<name>step</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description>
+Name of the exported scoped variable for the
+current item of the iteration. This scoped
+variable has nested visibility.
+        </description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+Name of the exported scoped variable for the
+status of the iteration. Object exported is of
+type
+javax.servlet.jsp.jstl.core.LoopTag
+Status. This scoped variable has nested
+visibility.
+        </description>
+			<name>varStatus</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	<!-- -**************** SET ****************** -->
+	<tag>
+		<description>Sets the result of an expression evaluation in a 'scope'. Umozni predat expressin vsem funkcim</description>
+		<name>set</name>
+		<tag-class>org.apache.taglibs.standard.tag.rt.core.SetTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description>
+				Name of the exported scoped variable to hold the value specified in the action. The type of the scoped 
+				variable is whatever type the value expression evaluates to.
+	        </description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Expression to be evaluated.</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Target object whose property will be set. Must evaluate to a JavaBeans object with setter 
+				property property, or to a java.util.Map object.
+	        </description>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Name of the property to be set in the target object.</description>
+			<name>property</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scope for var.</description>
+			<name>scope</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<!-- -**************** NULL OPTION ****************** -->
+	<tag>
+		<description>Option tag, ktery umoznuje zadat hodnotu null a label, ktery neni null.</description>
+		<display-name>option</display-name>
+		<name>option</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.NullValueOptionTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>
+                The value that will be submitted to the server if this option is selected. Will be
+                rendered as a String using the Stripes Formatting service, which will apply a
+                formatter if an applicable one is found, or call toString() if one is not.
+            </description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>A value to use as the body of the generated HTML label tag.</description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                If present, and the parent select tag had no value= attribute, causes
+                the option to be selected by default.  The value is ignored, only presence in meaningful.
+            </description>
+			<name>selected</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+               	Resi pripad, kdy je treba rozlisit, zda se ma na misto hodnoty v tagu option rendrovat hodnota popisku.
+                Pokud je true a hodnota je null, naplni hodnotu tagu option hodnotou popisku. Defaultni chovani je takove, ze
+                ponecha hodnotu nastavenou jako null.
+            </description>
+			<name>renderlabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Disables the input element when it first loads so that the user can not write text in it, or select it. (HTML Pass-through)</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The type used to format the object. If the value is a date, valid values are 'date', 'time' and 'datetime'. If the value is a Number, valid values are 'number', 'percentage' and 'currency'.</description>
+			<name>formatType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The pattern to apply. Can be either a named pattern or an actual pattern as understood by java.text.DateFormat or java.text.NumberFormat as appropriate for the type of object being formatted.</description>
+			<name>formatPattern</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the page. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+
+	<!-- -**************** BARVA STAVU ****************** -->
+	<tag>
+		<description>Tag, ktery generuje barevny ctverecek</description>
+		<name>barvaStav</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.StavTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Barva stavu.</description>
+			<name>barva</name>
+			<required>yes</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>Titulek ktery bude k barve stavu prirazen.</description>
+			<name>title</name>
+			<required>no</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Id span elementu.</description>
+			<name>id</name>
+			<required>no</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Klasa, podle ktere se bude span element chovat, musi byt definovana v pripojenem css souboru.
+        		Pokud neni definovano, pouzije se defaultni nastaveni (oramovany ctverecek).</description>
+			<name>clazz</name>
+			<required>no</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+
+	<!-- ********* ACTION LINK ******** -->
+	<tag>
+		<description>Vylepseni tagu s:link o moznost rozhodnout, zda se bude generovat ozkaz, text, nebo nic.
+    		K tomu ucelu slouzi atributy test a zobrazit.</description>
+		<display-name>link</display-name>
+		<name>link</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.ActionLinkTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>Pokud je vyraz zadany jako parametr test vyhodnocen jako true, nebo je atribut test vynechan, 
+        		pak se odkaz zobrazi standardnim zpusobem. Pokud je vyraz vyhodnocen jako false, nezobrazi se.
+        		Pokud je vyraz vyhodnocen jako false, ale je treba zobrazit alespon text misto odkazu, lze tak ucinit
+        		nastavenim atributu zobrazit na "true"</description>
+			<name>test</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Atribut ma vyznam pouze pouze v kombinaci s atributem test, pokud je vysledek vyrazu v atributu
+        		test vyhodnocen jako false, lze zadanim hodnoty "true" (nebo vyrazu, ktery se vyhodnoti jako true),
+        		zobrazit misto odkazu alespon text (jinak by se odkaz nezobrazil vubec).</description>
+			<name>zobrazit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+
+		<!-- atributy pro s:link -->
+
+		<attribute>
+			<description>
+                The (optional) event that should be fired if the link is to an ActionBean. If not
+                supplied then the tag will not render an explicit event (but one may by built in
+                to the URL/href supplied).
+            </description>
+			<name>event</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Indicates if the _sourcePage parameter should be appended to the URL. Default
+                value is false.
+            </description>
+			<name>addSourcePage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Indicates if the application context path should be included at the beginning of
+                the generated URL.
+            </description>
+			<name>prependContext</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>
+                The fully qualified name of an ActionBean class, or alternatively a Class instance
+                for an ActionBean class.  An alternative to the 'href' attribute, the 'beanclass'
+                attribute will generate an href appropriate for the ActionBean identified. Note
+                that if an ActionBean that does not yet exist is identified an exception will
+                be thrown!
+            </description>
+			<name>beanclass</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>
+            	The (optional) anchor that is appended at the end of the generated URL.
+            	If the URL specified by the value attribute already contains the anchor then
+            	the anchor specified by this attribute takes precedence.
+            </description>
+			<name>anchor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The character set used to encode the referenced page. (HTML Pass-through)</description>
+			<name>charset</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Used to define a region for clicking in an image map. (HTML Pass-through)</description>
+			<name>coords</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                The target URL. If the URL starts with a slash and does not contain the current
+                web application context path, then the context path will be prepended to the URL.
+                (HTML Pass-through)
+            </description>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language of the target page. (HTML Pass-through)</description>
+			<name>hreflang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The name of an anchor.  (HTML Pass-through)</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Specified the relationship between the current page and the target URL.
+                (HTML Pass-through)
+            </description>
+			<name>rel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Like rel, but in reverse.</description>
+			<name>rev</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Used to define a shape within an image map.</description>
+			<name>shape</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The frame or window in which the link will open.</description>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The MIME type of the target URL.</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the page. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+
+	<!-- ********* EXPORT LINK LINK ******** -->
+	<tag>
+		<description>Vylepseni tagu dtx:link o moznost definovat parametry exportu do zadaneho formatu. 
+    		Dale obsahuje atributy test a zobrazit. Atributy navysku a stahovat ovlivnuji, jak se bude chovat odkaz 
+    		pri generovani obsahu s exportovanou sestavou.</description>
+		<display-name>link</display-name>
+		<name>export</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.ActionLinkTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>Udava, zda se ma sestava pro pdf vytvorit na vysku nebo na sirku. Pokud je true nebo neni
+        		zadan, sestava se vytvori na vysku</description>
+			<name>navysku</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Udava, zda se ma vysledny soubor se sestavou nabizet ke stahovani. Pokud je false nebo neni zadan,
+        		prohlizec se pokusi soubor zobrazit ve svem okne</description>
+			<name>stahovat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<!-- dtx:actionLink atributy -->
+
+		<attribute>
+			<description>Pokud je vyraz zadany jako parametr test vyhodnocen jako true, nebo je atribut test vynechan, 
+        		pak se odkaz zobrazi standardnim zpusobem. Pokud je vyraz vyhodnocen jako false, nezobrazi se.
+        		Pokud je vyraz vyhodnocen jako false, ale je treba zobrazit alespon text misto odkazu, lze tak ucinit
+        		nastavenim atributu zobrazit na "true"</description>
+			<name>test</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Atribut ma vyznam pouze pouze v kombinaci s atributem test, pokud je vysledek vyrazu v atributu
+        		test vyhodnocen jako false, lze zadanim hodnoty "true" (nebo vyrazu, ktery se vyhodnoti jako true),
+        		zobrazit misto odkazu alespon text (jinak by se odkaz nezobrazil vubec).</description>
+			<name>zobrazit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<!-- atributy pro s:link -->
+
+		<attribute>
+			<description>
+                The (optional) event that should be fired if the link is to an ActionBean. If not
+                supplied then the tag will not render an explicit event (but one may by built in
+                to the URL/href supplied).
+            </description>
+			<name>event</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Indicates if the _sourcePage parameter should be appended to the URL. Default
+                value is false.
+            </description>
+			<name>addSourcePage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Indicates if the application context path should be included at the beginning of
+                the generated URL.
+            </description>
+			<name>prependContext</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>
+                The fully qualified name of an ActionBean class, or alternatively a Class instance
+                for an ActionBean class.  An alternative to the 'href' attribute, the 'beanclass'
+                attribute will generate an href appropriate for the ActionBean identified. Note
+                that if an ActionBean that does not yet exist is identified an exception will
+                be thrown!
+            </description>
+			<name>beanclass</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>
+            	The (optional) anchor that is appended at the end of the generated URL.
+            	If the URL specified by the value attribute already contains the anchor then
+            	the anchor specified by this attribute takes precedence.
+            </description>
+			<name>anchor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The character set used to encode the referenced page. (HTML Pass-through)</description>
+			<name>charset</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Used to define a region for clicking in an image map. (HTML Pass-through)</description>
+			<name>coords</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                The target URL. If the URL starts with a slash and does not contain the current
+                web application context path, then the context path will be prepended to the URL.
+                (HTML Pass-through)
+            </description>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language of the target page. (HTML Pass-through)</description>
+			<name>hreflang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The name of an anchor.  (HTML Pass-through)</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Specified the relationship between the current page and the target URL.
+                (HTML Pass-through)
+            </description>
+			<name>rel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Like rel, but in reverse.</description>
+			<name>rev</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Used to define a shape within an image map.</description>
+			<name>shape</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The frame or window in which the link will open.</description>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The MIME type of the target URL.</description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the page. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+
+	<!-- **************** READ ONLY CHECK BOX **************** -->
+	<tag>
+		<description>Checkbox, ktery pouziva populacni strategii, kde se nejprve zjistuje hodnota nejprve 
+    		z requestu, pak z atributu tagu a pokud se nenalezne, vrati se false</description>
+		<name>checkbox</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.ReadOnlyCheckbox</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+               Priznak, zda ma byt checkbox zaskrtnut, hodnota musi byt bud true nebo false, nebo musi byt nevyplnena (null)
+            </description>
+			<name>checked</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+
+		<!-- Start: Standard Form Input attributes -->
+		<attribute>
+			<description>The name of the form field.</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The size of the form field. (HTML Pass-through)</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Disables the input element when it first loads so that the user can not write text in it, or select it. (HTML Pass-through)</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard Form Input attributes -->
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the page. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<!-- **************** IMAGE TAG **************** -->
+	<tag>
+		<description>Nahrada za obycejny img tag, vytvori url dle kontroleru</description>
+		<name>img</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.ImageTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Zastava stejnou roli jako stejnojmenny atribut tagu link knihovny stripes.</description>
+			<name>beanclass</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Zastava stejnou roli jako stejnojmenny atribut tagu link knihovny stripes.</description>
+			<name>event</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Stejna funkce jako v html protejsku. Pokud neni specifikovan, nastavi prazdny retezec</description>
+			<name>alt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Stejna funkce jako v html protejsku. Pokud neni specifikovan, nastavi prazdny retezec</description>
+			<name>alt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Stejna funkce jako v html protejsku.</description>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Stejna funkce jako v html protejsku.</description>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Stejna funkce jako v html protejsku. Je treba zadat nazev mapy s # prefixem.</description>
+			<name>usemap</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the page. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- **************** DATUMOVE POLE **************** -->
+	<tag>
+		<description>Vstupni pole s objektem date picker. Pro pouziti tohoto tagu je treba mit v hlavicce html import pro 
+    		jQuery, jQuery-ui (nebo alespon pro jquery-ui-datePicker) a dale css styly pro jquery-ui.</description>
+		<name>datum</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.DatumovePole</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>Nastavuje, zda maji byt vyditelne dny z predchoziho / dalsiho mesice. Pokud neni vyplneno,
+					dny z predchoziho/dalsiho mesice zobrazi</description>
+			<name>showOtherMonths</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Nastavuje, zda lze mesic vybrat z roletky ci nikoliv. Pokud neni vyplneno, vyber neni povolen</description>
+			<name>changeMonth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Nastavuje, zda lze rok vybrat z roletky ci nikoliv. Pokud neni vyplneno, vyber neni povolen</description>
+			<name>changeYear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Nastavuje, zda zobrazit spodni panel s tlacitky. Pokud neni vyplneno, nezobrazuje se</description>
+			<name>showButtons</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Akce, ktera se provede pri zavreni dialogu. Napr volani nejake JS funkce.</description>
+			<name>onCloseEvent</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+
+
+		<!-- Start: Standard Form Input attributes -->
+		<attribute>
+			<description>The name of the form field.</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The size of the form field. (HTML Pass-through)</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A default value for the form field. Can be a literal value, or an EL expression.</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>Disables the input element when it first loads so that the user can not write text in it, or select it. (HTML Pass-through)</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard Form Input attributes -->
+
+		<attribute>
+			<description>Indicates that the value of this field cannot be modified. (HTML Pass-through)</description>
+			<name>readonly</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The maximum number of characters that can be entered in the field. (HTML Pass-through)</description>
+			<name>maxlength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The type used to format the object. If the value is a date, valid values are 'date', 'time' and 'datetime'. If the value is a Number, valid values are 'number', 'percentage' and 'currency'.</description>
+			<name>formatType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The pattern to apply. Can be either a named pattern or an actual pattern as understood by java.text.DateFormat or java.text.NumberFormat as appropriate for the type of object being formatted.</description>
+			<name>formatPattern</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the pgae. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+
+	<!-- **************** DATUM-CAS POLE **************** -->
+	<tag>
+		<description>Vstupni pole s objektem dateTime picker. Pro pouziti tohoto tagu je treba mit v hlavicce html import pro 
+    		jQuery, jQuery-ui (nebo alespon pro jquery-ui-datePicker) a dale css styly pro jquery-ui a jquery-ui-timepicker-addon.</description>
+		<name>datumCas</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.DateTimePole</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>Nastavuje, zda maji byt vyditelne dny z predchoziho / dalsiho mesice. Pokud neni vyplneno,
+					dny z predchoziho/dalsiho mesice zobrazi</description>
+			<name>showOtherMonths</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Nastavuje, zda lze mesic vybrat z roletky ci nikoliv. Pokud neni vyplneno, vyber neni povolen</description>
+			<name>changeMonth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Nastavuje, zda lze rok vybrat z roletky ci nikoliv. Pokud neni vyplneno, vyber neni povolen</description>
+			<name>changeYear</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Nastavuje, zda zobrazit spodni panel s tlacitky. Pokud neni vyplneno, nezobrazuje se</description>
+			<name>showButtons</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<description>Akce, ktera se provede pri zavreni dialogu. Napr volani nejake JS funkce.</description>
+			<name>onCloseEvent</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+
+		<!-- Start: Standard Form Input attributes -->
+		<attribute>
+			<description>The name of the form field.</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The size of the form field. (HTML Pass-through)</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A default value for the form field. Can be a literal value, or an EL expression.</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>Disables the input element when it first loads so that the user can not write text in it, or select it. (HTML Pass-through)</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard Form Input attributes -->
+
+		<attribute>
+			<description>Indicates that the value of this field cannot be modified. (HTML Pass-through)</description>
+			<name>readonly</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The maximum number of characters that can be entered in the field. (HTML Pass-through)</description>
+			<name>maxlength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The type used to format the object. If the value is a date, valid values are 'date', 'time' and 'datetime'. If the value is a Number, valid values are 'number', 'percentage' and 'currency'.</description>
+			<name>formatType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The pattern to apply. Can be either a named pattern or an actual pattern as understood by java.text.DateFormat or java.text.NumberFormat as appropriate for the type of object being formatted.</description>
+			<name>formatPattern</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the pgae. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+
+	<!-- **************** WARNING DIALOG ****************** -->
+	<tag>
+		<description>Tag, ktery generuje okno s pozadavkem na potvrzeni.
+		</description>
+		<name>potvrzeni</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.WarningDialogVeFormu</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Datova prepravka obsahujici nazvy metod a zpravu z actionBeanu.</description>
+			<name>dialogData</name>
+			<required>yes</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>com.popkyss.sweetShop.setting.ltd.dto.DialogData</type>
+		</attribute>
+		<attribute>
+			<description>Nazev datove prepravky v actionBeanu. Vyplnit jen v pripade pokud se jmenuje jinak nez dialogData.</description>
+			<name>nazevPrepravky</name>
+			<required>no</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Id formulare. Pokud je jine nez id formulare, ve kterem je umisten tento tag.</description>
+			<name>idForm</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<!-- **************** Povinna polozka ****************** -->
+	<tag>
+		<description>Tag pro povinnou polozku formulare</description>
+		<name>povinne</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.PovinnaPolozka</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Titulek pro znak.</description>
+			<name>title</name>
+			<required>no</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Znak, ktery se zobrazi (defaultne hvezdicka).</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Class styl pro znak. Defaultne cerveny tucny text, zarovnany "top".</description>
+			<name>class</name>
+			<required>no</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+
+
+
+	<!-- **************** MULTISELECTBOX **************** -->
+	<tag>
+		<description>Rozbalovaci multi-selectbox. Pro pouziti tohoto tagu je treba mit v hlavicce html import pro 
+    		jQuery, jQuery-ui a dale css styly pro jquery-ui a styl pro rozbalovaci tlacitko (.multiSelectButton).
+    		Dale metody JS multiSelectBoxScript a multiSelectBoxScriptOptionVse</description>
+		<name>multiselect</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.DtxMultiSelectBox</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<description>Sirka boxu</description>
+			<name>width</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Integer</type>
+		</attribute>
+
+		<attribute>
+			<description>Priznak, zda se ma zobrazit take moznost vse</description>
+			<name>moznostVse</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<!-- Start: Standard Form Input attributes -->
+		<attribute>
+			<description>The name of the form field.</description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The size of the form field. (HTML Pass-through)</description>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Determines what options within the select are rendered by default. May be a String,
+                Object, Array or Collection.  In the first two cases, any option with a matching
+                value will be rendered as selected. In the second two cases any option with a value
+                matching one of potentially many values will be rendered as selected.
+            </description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>Disables the input element when it first loads so that the user can not write text in it, or select it. (HTML Pass-through)</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                If the value passed in matches the empty string or (ignoring case) "multiple",
+                or if the value can reasonably be converted to true then the attribute will be
+                rendered as multiple="multiple" causing the select to render as a multi-select.
+                In all other cases the attribute will be omitted.
+            </description>
+			<name>multiple</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard Form Input attributes -->
+
+		<attribute>
+			<description>Indicates that the value of this field cannot be modified. (HTML Pass-through)</description>
+			<name>readonly</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The maximum number of characters that can be entered in the field. (HTML Pass-through)</description>
+			<name>maxlength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The type used to format the object. If the value is a date, valid values are 'date', 'time' and 'datetime'. If the value is a Number, valid values are 'number', 'percentage' and 'currency'.</description>
+			<name>formatType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The pattern to apply. Can be either a named pattern or an actual pattern as understood by java.text.DateFormat or java.text.NumberFormat as appropriate for the type of object being formatted.</description>
+			<name>formatPattern</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the pgae. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+	<!-- **************** MULTISELECTBOX-OPTIONS-ENUMERATIONS **************** -->
+	<tag>
+		<description><![CDATA[
+            <p>Writes a set of &lt;option value="foo"&gt;bar&lt;/option&gt; tags to the page based on the
+            values of a enum.  Each value in the enum is represented by a single option tag on the page. The
+            options will be generated in ordinal value order (i.e. the order they are declared in the
+            enum).</p>
+
+            <p>The label (the value the user sees) is generated in one of three ways: by looking up a
+            localized value, by using the property named by the 'label' tag attribute if it is supplied
+            and lastly by toString()'ing the enumeration value.  For example the following tag:</p>
+
+            <pre>&lt;stripes:options-enumeration enum="net.kitty.EyeColor" label="description"/&gt;</pre>
+
+            when generating the option for the value <tt>EyeColor.BLUE</tt> will look for a label in the
+            following order:</p>
+
+            <ul>
+              <li><tt>resource: EyeColor.BLUE</tt></li>
+              <li><tt>resource: net.kitty.EyeColor.BLUE</tt></li>
+              <li><tt>property: EyeColor.BLUE.getDescription()</tt> (because of the label="description" above)</li>
+              <li><tt>failsafe: EyeColor.BLUE.toString()</tt></li>
+            </ul>
+
+            <p>If the class specified does not exist, or does not specify a Java 1.5 enum then a
+            JspException will be raised.</p>
+
+            <p>All attributes of the tag, other than enum and label, are passed directly through to
+            the <tt>&lt;stripes:option/&gt;</tt> which is used to generate the individual HTML
+            options tags. As a result the <tt>&lt;stripes:options-enumeration/&gt;</tt> will exhibit
+            the same re-population/selection behaviour as the regular options tag.</p>
+
+            <p>Since the tag has no use for one it does not allow a body.</p>
+        ]]></description>
+		<display-name>options-enumeration</display-name>
+		<name>options-enumeration</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.DtxOptionEnumeration</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>
+                The fully qualified name of a Class that is a JDK1.5 enum.
+            </description>
+			<name>enum</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                The name of the property to be used at the label of each option. If not specifed,
+                and no localized value can be found, the toString() method will be called on the
+                enumerated objects to supply the user-visible text.
+            </description>
+			<name>label</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Zkratka ktera se objevi v selectu
+            </description>
+			<name>zkratka</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+                Vycet ordinalu ktere se maji vykreslit jako options, oddelene carkou
+            </description>
+			<name>ordinals</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the pgae. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+	</tag>
+
+
+	<!-- **************** LONG TEXT **************** -->
+	<tag>
+		<description>Tag pro vypsani dlouheho textu napr. ve strankovanem seznamu, pokud je text delsi nez maximalni 
+    		povolena delka, pak se orizne, doplni tremi teckami a cely text se da do titulku</description>
+		<name>longText</name>
+		<tag-class>com.popkyss.sweetShop.setting.ltd.LongText</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<description>hodnota retezce</description>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+
+		<attribute>
+			<description>maximalni delka textu</description>
+			<name>maxTextLength</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Integer</type>
+		</attribute>
+
+		<attribute>
+			<description>priznak, zda se ma pouzit titulek, pokud je prekrocena macimalni delka textu. Pokud je true,
+				coz je zakladni chovani, je cely text v titulku, zobrazena je pouze cast (maxTextLength - 3 znaku).
+				Pokud je false, pak neni nastaven titulek textu</description>
+			<name>useTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<!-- Start: Standard HTML attributes -->
+		<attribute>
+			<description>Keyboard shortcut to access the element. (HTML Pass-through)</description>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The CSS class to be applied to the element. (HTML Pass-through)</description>
+			<name>class</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Text direction. (HTML Pass-through)</description>
+			<name>dir</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>A unique identifier for the HTML tag on the pgae. (HTML Pass-through)</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The language code of the element. (HTML Pass-through)</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element loses focus. (HTML Pass-through)</description>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element changes. (HTML Pass-through)</description>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on each mouse click. (HTML Pass-through)</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the element acquires focus. (HTML Pass-through)</description>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is depressed. (HTML Pass-through)</description>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a key is released. (HTML Pass-through)</description>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when a mouse button is released. (HTML Pass-through)</description>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Scripting code run when an element is selected. (HTML Pass-through)</description>
+			<name>onselect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>The tab order of the element. (HTML Pass-through)</description>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Tool-tip text for the element. (HTML Pass-through)</description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- End: Standard HTML attributes -->
+
+		<dynamic-attributes>false</dynamic-attributes>
+	</tag>
+
+	<!-- -**************** FUNKCE ****************** -->
+
+	<function>
+		<description>Vrati xor hodnotu dvou ciselnych parametru</description>
+		<name>xor</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>int xor(int, int)</function-signature>
+		<example>&lt;c:if test="${dtx:xor(a, b) == 3}"></example>
+	</function>
+
+
+	<function>
+		<description>Vrati mensi hodnotu ze dvou ciselnych parametru</description>
+		<name>min</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>int min(int, int)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Vrati vetsi hodnotu ze dvou ciselnych parametru</description>
+		<name>max</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>int max(int, int)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Serializuje objekt do pole bajtu a to zakoduje do kodovani BASE64</description>
+		<name>encodeObject</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String encodeObject(java.lang.Object)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Dekoduje retezec v kodovani BASE64 do pole bajtu a z nich deserializuje objekt</description>
+		<name>decodeObject</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.Object decodeObject(java.lang.String)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zakryptuje int (32 bitu) tak, aby se dal kdykoliv pozdeji precist, pouziva staly klic</description>
+		<name>encryptInt</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String encryptInt(int)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zakryptuje short (16 bitu) tak, aby se dal kdykoliv pozdeji precist, pouziva staly klic</description>
+		<name>encryptShort</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String encryptShort(short)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zakryptuje char (16 bitu) tak, aby se dal kdykoliv pozdeji precist, pouziva staly klic</description>
+		<name>encryptChar</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String encryptChar(char)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zakryptuje byte (8 bitu) tak, aby se dal kdykoliv pozdeji precist, pouziva staly klic</description>
+		<name>encryptByte</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String encryptByte(byte)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zakryptuje objekt tak, aby se dal kdykoliv pozdeji precist, pouziva staly klic.
+   			Trida objektu, ktery se bude kryptovat musi byt Serializable</description>
+		<name>encryptObject</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String encryptObject(java.lang.Object)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Vrati retezec nahodnych tisknutelnych ASCII znaku zadane delky</description>
+		<name>sul</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String sul(int)</function-signature>
+		<example>&lt;c:set var="nahoda" value="${dtx:sul(15)}"></example>
+	</function>
+
+
+	<function>
+		<description>Provede kodovani retezce pomoci HTML kodovani. Koduje znaky &lt;, &gt;, &quot;, &amp;</description>
+		<name>encodeHtml</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String encodeHtml(java.lang.String)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zjisti, zda je zadany objekty typu java.util.Date</description>
+		<name>isDate</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>boolean isDate(java.lang.Object)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zjisti, zda je zadany objekty typu java.sql.TimeStamp</description>
+		<name>isTimeStamp</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>boolean isTimeStamp(java.lang.Object)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zjisti, zda je zadany objekty typu java.lang.Number</description>
+		<name>isNumber</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>boolean isNumber(java.lang.Object)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Zjisti, zda je zadany objekty typu java.util.List</description>
+		<name>isList</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>boolean isList(java.lang.Object)</function-signature>
+	</function>
+
+
+	<function>
+		<description>Prevede objekt barvy na hexadecimalni tvar pro pouziti ve stylech</description>
+		<name>getBarvaHexa</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String getBarvaHexa(java.awt.Color)</function-signature>
+	</function>
+
+	<function>
+		<name>nahradEntry</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String nahradEntry(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<description>Prevede kolekci na retezec podle logiky metod knihovni tridy DatexCollections. Pro spravne fungovani 
+   			je vhodne, aby prvky umistene v kolekci implementovaly nejak rozumne metodu toString.</description>
+		<name>collectionToString</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String
+			collectionToString(java.util.Collection)</function-signature>
+	</function>
+
+	<function>
+		<description>Prevede kolekci na retezec podle logiky metod knihovni tridy DatexCollections. Pro spravne fungovani 
+   			je vhodne, aby prvky umistene v kolekci implementovaly nejak rozumne metodu toString. Tato verze prijima jako druhy
+   			parametr retezec oddelovace</description>
+		<name>collectionToString2</name>
+		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
+		<function-signature>java.lang.String
+			collectionToString2(java.util.Collection, java.lang.String)</function-signature>
+	</function>
+	
+	
+
+
+</taglib>

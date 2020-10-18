@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings
+        xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+        version="2.0">
+
+   
+   <entity class="com.popkyss.sweetShop.entity.Adresa">
+		<attributes>
+			<id name="idAdresa">
+				<column name="ADRESA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t01" strategy="AUTO" />
+				<sequence-generator name="t01"
+					sequence-name="SEQ_ADRESA_ADRESA_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Data">
+		<attributes>
+			<id name="idData">
+				<column name="DATA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t02" strategy="AUTO" />
+				<sequence-generator name="t02"
+					sequence-name="SEQ_DATA_DATA_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Dodavatel">
+		<attributes>
+			<id name="idDodavatel">
+				<column name="DODAVATEL_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t03" strategy="AUTO" />
+				<sequence-generator name="t03"
+					sequence-name="SEQ_DODAVATEL_DODAVATEL_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Dodavka">
+		<attributes>
+			<id name="idDodavka">
+				<column name="DODAVKA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t04" strategy="AUTO" />
+				<sequence-generator name="t04"
+					sequence-name="SEQ_DODAVKA_DODAVKA_ID" />
+			</id>
+			
+			<basic name="prebrano">
+				<column name="PREBRANO" nullable="true" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Kosik">
+		<attributes>
+			<id name="idKosik">
+				<column name="KOSIK_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t05" strategy="AUTO" />
+				<sequence-generator name="t05"
+					sequence-name="SEQ_KOSIK_KOSIK_ID" />
+			</id>
+			
+			<basic name="upraveno">
+				<column name="UPRAVENO" nullable="false" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Objednavka">
+		<attributes>
+			<id name="idObjednavka">
+				<column name="OBJEDNAVKA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t06" strategy="AUTO" />
+				<sequence-generator name="t06"
+					sequence-name="SEQ_OBJEDNAVKA_OBJEDNAVKA_ID" />
+			</id>
+			
+			<basic name="vytvoreno">
+				<column name="VYTVORENO" nullable="false" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="zmeneno">
+				<column name="ZMENENO" nullable="true" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Oblibene">
+		<attributes>
+			<id name="idOblibene">
+				<column name="OBLIBENE_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t07" strategy="AUTO" />
+				<sequence-generator name="t07"
+					sequence-name="SEQ_OBLIBENE_OBLIBENE_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Polozka">
+		<attributes>
+			<id name="idPolozka">
+				<column name="POLOZKA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t08" strategy="AUTO" />
+				<sequence-generator name="t08"
+					sequence-name="SEQ_POLOZKA_POLOZKA_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Produkt">
+		<attributes>
+			<id name="idProdukt">
+				<column name="PRODUKT_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t08" strategy="AUTO" />
+				<sequence-generator name="t08"
+					sequence-name="SEQ_PRODUKT_PRODUKT_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Role">
+		<attributes>
+			<id name="idRole">
+				<column name="ROLE_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t09" strategy="AUTO" />
+				<sequence-generator name="t09"
+					sequence-name="SEQ_ROLE_ROLE_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Skupina">
+		<attributes>
+			<id name="idSkupina">
+				<column name="SKUPINA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t10" strategy="AUTO" />
+				<sequence-generator name="t10"
+					sequence-name="SEQ_SKUPINA_SKUPINA_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Sleva">
+		<attributes>
+			<id name="idSleva">
+				<column name="SLEVA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t11" strategy="AUTO" />
+				<sequence-generator name="t11"
+					sequence-name="SEQ_SLEVA_SLEVA_ID" />
+			</id>
+			
+			<basic name="platnostOd">
+				<column name="PLATNOST_OD" nullable="false" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="platnostDo">
+				<column name="PLATNOST_DO" nullable="true" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Zakaznik">
+		<attributes>
+			<id name="idZakaznik">
+				<column name="ZAKAZNIK_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t12" strategy="AUTO" />
+				<sequence-generator name="t12"
+					sequence-name="SEQ_ZAKAZNIK_ZAKAZNIK_ID" />
+			</id>
+			
+			<basic name="narozeni">
+				<column name="NAROZENI" nullable="false" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="registrace">
+				<column name="REGISTRACE" nullable="false" length="7" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Zamestnanec">
+		<attributes>
+			<id name="idZamestnanec">
+				<column name="ZAMESTNANEC_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t13" strategy="AUTO" />
+				<sequence-generator name="t13"
+					sequence-name="SEQ_ZAMESTNANEC_ZAMESTNANEC_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Znacka">
+		<attributes>
+			<id name="idZnacka">
+				<column name="ZNACKA_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t14" strategy="AUTO" />
+				<sequence-generator name="t14"
+					sequence-name="SEQ_ZNACKA_ZNACKA_ID" />
+			</id>
+		</attributes>
+	</entity>
+	
+	<entity class="com.popkyss.sweetShop.entity.Logger">
+		<attributes>
+			<id name="idLogin">
+				<column name="LOGIN_ID" unique="true" nullable="false"
+					precision="8" scale="0" />
+				<generated-value generator="t15" strategy="AUTO" />
+				<sequence-generator name="t15"
+					sequence-name="SEQ_DATA_DATA_ID" />
+			</id>
+		</attributes>
+	</entity>
+</entity-mappings>

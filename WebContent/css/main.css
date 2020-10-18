@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+
+
+#divMain {
+	height: 500px; 
+	background-size: 300px; 
+	background-repeat: no-repeat; 
+	background-position: center; 
+	background-attachment: fixed;
+}
+
+.regUziv {
+	float: left; 
+	margin: 10px; 
+	padding: 10px; 
+	background-color: maroon; 
+	color: infobackground; 
+	border-radius: 15px; 
+	border: 2px outset;  
+	min-width: 200px;
+	opacity: 0.95;
+}
+
+#regUziv{
+	float: none;
+	margin: auto; 
+	padding: 20px;
+	width: 20%;
+	min-width: 250px;
+}
+
+.regUziv table {
+	margin: auto;
+}
+
+
+.regUziv th {
+	text-shadow: 1px 1px 8px white;
+	text-align: right;
+}
+
+.regUziv h2 {
+	font-size: 20px;
+	color: infobackground;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.regUziv h3 {
+	font-size: 12px;
+	color: infobackground;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.regUziv th input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	border: 3px outset;
+}
+
+.regUziv th input[type="submit"]:hover {
+	border: 3px inset;
+}
+
+.regUziv a {
+	color: infobackground;
+	text-decoration: none;
+}
+
+.registrace {
+	margin: auto; 
+	padding: 20px;
+	border: 1px groove;
+	width: 20%;
+	min-width: 250px;
+	border-radius: 15px;
+	background-color: maroon;
+	text-align: center;
+	color: infobackground;
+	opacity: 0.95;
+}
+
+.registrace table{
+	width: 80%;
+	margin: auto;
+}
+
+.registrace h2 {
+	font-size: 20px;
+	color: infobackground;
+	margin-bottom: 20px;
+}
+
+.registrace h3 {
+	font-size: 12px;
+	color: infobackground;
+	margin-bottom: 5px;
+}
+
+.registrace th {
+	color: infobackground;
+	text-align: right;
+}
+
+.registrace td {
+	text-align: left;
+}
+
+.registrace input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	border: 3px outset;
+}
+
+.registrace input[type="submit"]:hover {
+	background-color: #ffcb83;
+	border: 3px inset;
+}
+
+.uvod {
+	margin: auto; 
+	padding: 50px;
+	border: 1px groove;
+	width: 60%;
+	min-width: 250px;
+	border-radius: 15px;
+	background-color: maroon;
+	text-align: center;
+	color: infobackground;
+	opacity: 0.95;
+}
+
+.uvod h1 {
+	padding: 30px;
+	padding-top: 0px;
+}
+
+.uvod th {
+	text-align: left;
+	padding: 10px;
+	text-shadow: 1px 1px 8px white;
+}
+
+.uvod a {
+	text-decoration: none;
+	color: infobackground;
+}
