@@ -28,7 +28,6 @@
 					<tr>
 						<th><s:label name="actionBean.novyZakaznik.ulice"/> </th>
 						<td><s:text name="actionBean.novyZakaznik.ulice"></s:text></td>
-						
 					</tr>
 					<tr>
 						<th><s:label name="actionBean.novyZakaznik.cp"/> </th>
