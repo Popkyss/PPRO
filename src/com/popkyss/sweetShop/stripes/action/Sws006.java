@@ -7,7 +7,6 @@ import com.popkyss.sweetShop.service.IOpravneni;
 import com.popkyss.sweetShop.service.SweetShopServiceFactory;
 import com.popkyss.sweetShop.setting.ASessionActionSupport;
 import com.popkyss.sweetShop.setting.BasicServiceException;
-import com.popkyss.sweetShop.setting.HlavickaBean;
 import com.popkyss.sweetShop.stripes.bean.Sws006Bean;
 
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -119,24 +118,13 @@ public class Sws006 extends ASessionActionSupport<Sws006Bean> {
 			opravneni.smazatZakaznika(actionBean.getUzivatel().getIdUzivatel());
 			msgI("006.04");
 			if(((String)session().getAttribute("username")).equals(actionBean.getUzivatel().getUsername())) {
-				odhlasMe();
-				return new RedirectResolution(Sws000.class);
+				return new ForwardResolution("/logout");
 			}
 		} catch (BasicServiceException e) {
 			msgE(e.getId(), e.getParams());
 		}
 		return new RedirectResolution(getClass());
 	}
-	
-	private void odhlasMe() {
-		session().removeAttribute("username");
-		session().removeAttribute("password");
-		session().removeAttribute("isZamestnancem");
-		session().removeAttribute("kosik");
-		session().setAttribute("nasetovany", false);
-		session().setAttribute("hlavickaBean", new HlavickaBean());
-	}
-
 
 	@ValidationMethod(on = "ulozit")
 	public void ulozitValidation(ValidationErrors err) {

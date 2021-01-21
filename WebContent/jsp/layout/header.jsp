@@ -21,6 +21,7 @@
  	HlavickaBean hb = (HlavickaBean) session.getAttribute(HlavickaBean.HLAVICKA_SESSION_SPACE);
  	if (hb == null) {
  		hb = new HlavickaBean();
+ 		hb.hlavicka.omezHlavickuSeznam(null);
  	}
  	hb.setStranka(pageNumber);
  	request.setAttribute("appPrefix", WebAppSettings.getAppPrefix());

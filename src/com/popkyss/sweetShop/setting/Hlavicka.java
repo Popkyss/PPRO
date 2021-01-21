@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.apache.log4j.Logger;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -97,11 +95,8 @@ public class Hlavicka implements Serializable {
 	}
 	
 	
-	public synchronized void omezHlavickuSeznam() {
-		HttpSession session = RequestContext.getHttpSession();
-		
+	public synchronized void omezHlavickuSeznam(Boolean zamestnanec) {
 		List<MenuBean> menuBeanSeznam = new ArrayList<MenuBean>();
-		 Boolean zamestnanec = (Boolean) session.getAttribute("isZamestnancem");
 		 if(zamestnanec == null) {
 			 for (int i = 0; i < this.menuBeanSeznam.size(); i++) {
 				 if (((MenuBean) this.menuBeanSeznam.get(i)).isStandard()) {

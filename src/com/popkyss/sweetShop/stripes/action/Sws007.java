@@ -9,7 +9,6 @@ import com.popkyss.sweetShop.service.IOpravneni;
 import com.popkyss.sweetShop.service.SweetShopServiceFactory;
 import com.popkyss.sweetShop.setting.ASessionActionSupport;
 import com.popkyss.sweetShop.setting.BasicServiceException;
-import com.popkyss.sweetShop.setting.HlavickaBean;
 import com.popkyss.sweetShop.stripes.bean.Sws007Bean;
 
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -48,27 +47,16 @@ public class Sws007 extends ASessionActionSupport<Sws007Bean> {
 
 	@DefaultHandler
 	public Resolution resolution() {
-		if((boolean) session().getAttribute("chyba")) {
-			prihlaseni();
-		}
+		prihlaseni();
 		return new ForwardResolution(CURRENT_JSP);
 	}
 	
 	public Resolution prihlaseni() {
 		Uzivatel u = opravneni.najdiUzivatele(actionBean.getUsername(),actionBean.getHeslo());
 		if(u != null) {	
-			session().setAttribute("username", actionBean.getUsername());
-			session().setAttribute("password", actionBean.getHeslo());
-			if(u.getIdZamestnanec() != null) {
-				session().setAttribute("isZamestnanec", true);				
-			} else {
-				session().setAttribute("isZamestnanec", false);
-			}
-			session().setAttribute("hlavickaBean", new HlavickaBean());
-			return new RedirectResolution(Sws000.class);
+			return new ForwardResolution("/login").addParameter("uname", actionBean.getUsername()).addParameter("pass", actionBean.getHeslo());
 		}
 		msgE("chyba.prihlaseni");
-		session().setAttribute("chyba", false);
 		return new RedirectResolution(getClass());
 	}
 

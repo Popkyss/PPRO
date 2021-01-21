@@ -16,11 +16,10 @@ public class HlavickaBean implements Serializable {
 	private static final long serialVersionUID = -7227041088996205949L;
 	public static final String HLAVICKA_SESSION_SPACE = "hlavickaBean";
 	private static final String HLAVICKA_PATH = "resources/web/hlavicka.xml";
-	private Hlavicka hlavicka = null;
+	public Hlavicka hlavicka = null;
 
 	private static Logger log = Logger.getLogger(HlavickaBean.class);
-
-	@SuppressWarnings("resource")
+	
 	public HlavickaBean() {
 		InputStream input = null;
 		try {
@@ -28,9 +27,10 @@ public class HlavickaBean implements Serializable {
 
 			XStream xstream = new XStream((HierarchicalStreamDriver) new DomDriver("utf-8"));
 			xstream.processAnnotations(Hlavicka.class);
-
+		
+			
 			this.hlavicka = (Hlavicka) xstream.fromXML(input);
-			this.hlavicka.omezHlavickuSeznam();
+//			this.hlavicka.omezHlavickuSeznam(null);
 		} catch (Exception e) {
 			log.error("Nepodarilo se inicializovat hlavicku aplikace", e);
 			throw new RuntimeException(e);

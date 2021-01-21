@@ -13,8 +13,8 @@
 
 <%
 	response.setHeader("Cache-Control", "no-cache"); //HTTP 1.1
-response.setHeader("Pragma", "no-cache"); //HTTP 1.0
-response.setDateHeader("Expires", 0); //prevent caching at the proxy server
+	response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+	response.setDateHeader("Expires", 0); //prevent caching at the proxy server
 %>
 <%
 	String pageTitle = PropertyReader.bundle((String) request.getAttribute(ApplicationFilter.ACTION), "pageTitle");

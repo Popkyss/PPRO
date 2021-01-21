@@ -35,7 +35,7 @@
 				</tr>
 				<tr>
 					<th><s:label name="actionBean.heslo"/> </th>
-					<td><s:text name="actionBean.heslo" /></td>
+					<td><s:password name="actionBean.heslo" /></td>
 				</tr>
 					<tr>
 						<th colspan="2"><s:submit name="prihlaseni">OK</s:submit></th>

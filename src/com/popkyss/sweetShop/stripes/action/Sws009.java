@@ -8,7 +8,6 @@ import com.popkyss.sweetShop.service.IOpravneni;
 import com.popkyss.sweetShop.service.SweetShopServiceFactory;
 import com.popkyss.sweetShop.setting.ASessionActionSupport;
 import com.popkyss.sweetShop.setting.BasicServiceException;
-import com.popkyss.sweetShop.setting.HlavickaBean;
 import com.popkyss.sweetShop.stripes.bean.Sws009Bean;
 
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -131,23 +130,13 @@ public class Sws009 extends ASessionActionSupport<Sws009Bean> {
 	public Resolution smazat() {
 		try {
 			opravneni.smazatZamestnance(actionBean.getUzivatel().getIdUzivatel());
-			odhlasMe();
+			
 			msgI("009.04");
 		} catch (BasicServiceException e) {
 			msgE(e.getId(), e.getParams());
 		}
-		return new RedirectResolution(Sws000.class);
+		return new ForwardResolution("/logout");
 	}
-	
-	private void odhlasMe() {
-		session().removeAttribute("username");
-		session().removeAttribute("password");
-		session().removeAttribute("isZamestnancem");
-		session().removeAttribute("kosik");
-		session().setAttribute("nasetovany", false);
-		session().setAttribute("hlavickaBean", new HlavickaBean());
-	}
-
 
 	@ValidationMethod(on = "ulozit")
 	public void ulozitValidation(ValidationErrors err) {

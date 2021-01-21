@@ -67,7 +67,7 @@ public abstract class AbstractAction implements ActionBean {
 	}
 
 	protected HttpSession session() {
-		return request().getSession();
+		return request().getSession(true);
 	}
 
 	protected HttpServletRequest request() {

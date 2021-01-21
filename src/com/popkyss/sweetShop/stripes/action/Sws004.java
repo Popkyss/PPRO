@@ -7,7 +7,6 @@ import com.popkyss.sweetShop.service.IOpravneni;
 import com.popkyss.sweetShop.service.SweetShopServiceFactory;
 import com.popkyss.sweetShop.setting.ASessionActionSupport;
 import com.popkyss.sweetShop.setting.BasicServiceException;
-import com.popkyss.sweetShop.setting.HlavickaBean;
 import com.popkyss.sweetShop.stripes.bean.Sws004Bean;
 
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -44,7 +43,7 @@ public class Sws004 extends ASessionActionSupport<Sws004Bean> {
 
 			@Validate(field = "uzivatel.jmeno", maxlength = 30, required = true, on = "ulozit"),
 			@Validate(field = "uzivatel.prijmeni", maxlength = 50, required = true, on = "ulozit"),
-			@Validate(field = "uzivatel.telefon", maxlength = 13, minlength = 9), 
+			@Validate(field = "uzivatel.telefon", maxlength = 13, minlength = 9, required = true, on = "ulozit"), 
 			
 			@Validate(field = "uzivatel.heslo2", maxlength = 30, required = true, on = "ulozitHeslo"),
 			@Validate(field = "noveHeslo", maxlength = 30, required = true, on = "ulozitHeslo"),
@@ -119,22 +118,12 @@ public class Sws004 extends ASessionActionSupport<Sws004Bean> {
 			opravneni.smazatZamestnance(actionBean.getUzivatel().getIdUzivatel());
 			msgI("004.04");
 			if(((String)session().getAttribute("username")).equals(actionBean.getUzivatel().getUsername())) {
-				odhlasMe();
-				return new RedirectResolution(Sws000.class);
+				return new ForwardResolution("/logout");
 			}
 		} catch (BasicServiceException e) {
 			msgE(e.getId(), e.getParams());
 		}
-		return new RedirectResolution(getClass());
-	}
-	
-	private void odhlasMe() {
-		session().removeAttribute("username");
-		session().removeAttribute("password");
-		session().removeAttribute("isZamestnancem");
-		session().removeAttribute("kosik");
-		session().setAttribute("nasetovany", false);
-		session().setAttribute("hlavickaBean", new HlavickaBean());
+		return new RedirectResolution(Sws001.class);
 	}
 
 
