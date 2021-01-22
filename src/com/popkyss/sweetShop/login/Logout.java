@@ -27,7 +27,7 @@ public class Logout extends HttpServlet {
 		session.removeAttribute("kosik");
 		session.setAttribute("nasetovany", false);
 		
-		HlavickaBean hb = new HlavickaBean();
+		HlavickaBean hb  = (HlavickaBean) session.getAttribute("hlavickaBean");
 		hb.hlavicka.omezHlavickuSeznam((Boolean) session.getAttribute("isZamestnancem"));
 		session.setAttribute("hlavickaBean", hb);
 		

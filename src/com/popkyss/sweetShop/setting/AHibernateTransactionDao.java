@@ -1,5 +1,6 @@
 package com.popkyss.sweetShop.setting;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 public abstract class AHibernateTransactionDao {
@@ -10,8 +11,9 @@ public abstract class AHibernateTransactionDao {
 				return session;
 			}
 			session.beginTransaction();
+			
 			return session;
-		} catch (HibernateSessionContextException e) {
+		} catch (HibernateSessionContextException | HibernateException e) {
 			throw new RuntimeException(e);
 		}
 	}

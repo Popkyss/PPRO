@@ -30,7 +30,6 @@ public class HlavickaBean implements Serializable {
 		
 			
 			this.hlavicka = (Hlavicka) xstream.fromXML(input);
-//			this.hlavicka.omezHlavickuSeznam(null);
 		} catch (Exception e) {
 			log.error("Nepodarilo se inicializovat hlavicku aplikace", e);
 			throw new RuntimeException(e);

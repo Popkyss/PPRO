@@ -15,6 +15,7 @@ public class Hlavicka implements Serializable {
 
 	private String stranka = "";
 	private List<MenuBean> menuBeanSeznam = new ArrayList<MenuBean>();
+	private List<MenuBean> fullMenuBeanSeznam = new ArrayList<MenuBean>();
 	private List<StrankaNavratBean> navratSeznam = new ArrayList<StrankaNavratBean>();
 
 	private boolean isExistStrankaMenu(String stranka) {
@@ -97,6 +98,12 @@ public class Hlavicka implements Serializable {
 	
 	public synchronized void omezHlavickuSeznam(Boolean zamestnanec) {
 		List<MenuBean> menuBeanSeznam = new ArrayList<MenuBean>();
+		if(fullMenuBeanSeznam == null) {
+			this.fullMenuBeanSeznam = this.menuBeanSeznam;
+		} else {
+			this.menuBeanSeznam = fullMenuBeanSeznam;
+		}
+		
 		 if(zamestnanec == null) {
 			 for (int i = 0; i < this.menuBeanSeznam.size(); i++) {
 				 if (((MenuBean) this.menuBeanSeznam.get(i)).isStandard()) {
@@ -191,4 +198,14 @@ public class Hlavicka implements Serializable {
 		navrat = String.valueOf(navrat) + "\n";
 		return navrat;
 	}
+
+	public List<MenuBean> getFullMenuBeanSeznam() {
+		return fullMenuBeanSeznam;
+	}
+
+	public void setFullMenuBeanSeznam(List<MenuBean> fullMenuBeanSeznam) {
+		this.fullMenuBeanSeznam = fullMenuBeanSeznam;
+	}
+	
+	
 }

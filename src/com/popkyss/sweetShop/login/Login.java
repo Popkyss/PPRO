@@ -26,15 +26,15 @@ public class Login extends HttpServlet  {
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("pass");	
 		
-		Uzivatel u = opravneni.najdiUzivatele(uname, pass);
 		
-		if(u != null) {	
-			HttpSession session = ((HttpServletRequest)request).getSession(false);
-			if(session != null) {
+		HttpSession session = ((HttpServletRequest)request).getSession(false);
+		if(session != null) {
+			Uzivatel u = opravneni.najdiUzivatele(uname, pass);
+			if(u != null) {	
 				session.setAttribute("username", uname);
 				session.setAttribute("password", pass);
 				session.setAttribute("nasetovany", false);
-
+				
 				if(u.getIdZamestnanec() != null) {
 					session.setAttribute("isZamestnancem", true);
 				} else {
@@ -42,16 +42,14 @@ public class Login extends HttpServlet  {
 					session.setAttribute("kosik",zbozi.najdiKosikZakaznika(u.getIdZakaznik()));
 				}
 				
-				HlavickaBean hb = new HlavickaBean();
+				HlavickaBean hb  = (HlavickaBean) session.getAttribute("hlavickaBean");
 				hb.hlavicka.omezHlavickuSeznam((Boolean) session.getAttribute("isZamestnancem"));
 				session.setAttribute("hlavickaBean", hb);
 				response.sendRedirect("sws000.action");
-			}
-			
-		} else {
-			HttpSession session = request.getSession(true);
-			if(session != null) {
-				response.sendRedirect("sws007.action");				
+			} else {
+				if(session != null) {
+					response.sendRedirect("sws007.action");				
+				}
 			}
 		}
 	}
