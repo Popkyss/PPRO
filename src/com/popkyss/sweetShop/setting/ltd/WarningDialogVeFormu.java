@@ -1,118 +1,102 @@
 package com.popkyss.sweetShop.setting.ltd;
-/*     */ import java.io.IOException;
+import java.io.IOException;
 
-/*     */ import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspException;
 
 import com.popkyss.sweetShop.setting.ltd.dto.DialogData;
 
-/*     */ import net.sourceforge.stripes.tag.FormTag;
-/*     */ import net.sourceforge.stripes.tag.HtmlTagSupport;
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ public class WarningDialogVeFormu
-/*     */   extends HtmlTagSupport
-/*     */ {
-/*     */   private static final String DEFAULT_NAZEV_PREPRAVKY = "dialogData";
-/*     */   private DialogData dialogData;
-/*     */   private String nazevPrepravky;
-/*     */   private String idForm;
-/*     */   
-/*     */   public int doStartTag() throws JspException {
-/*  29 */     return 0;
-/*     */   }
-/*     */ 
-/*     */ 
-/*     */   
-/*     */   public int doEndTag() throws JspException {
-/*  35 */     DialogData data = this.dialogData;
-/*  36 */     String nazev = (getNazevPrepravky() == null) ? "dialogData" : getNazevPrepravky();
-/*  37 */     if (data.getZobrazit().booleanValue()) {
-/*     */       try {
-/*  39 */         getPageContext().getOut().append(getHtml(data, nazev));
-/*  40 */       } catch (IOException e) {
-/*  41 */         throw new RuntimeException(e);
-/*     */       } 
-/*     */     }
-/*     */     
-/*  45 */     return 0;
-/*     */   }
-/*     */ 
-/*     */   
-/*     */   protected String getHtml(DialogData data, String nazev) {
-/*  50 */     StringBuilder sb = new StringBuilder(200);
-/*  51 */     sb.append("<script>warningMessage(\"");
-/*  52 */     sb.append(zjistiIdFormulare());
-/*  53 */     sb.append("\",\"");
-/*  54 */     sb.append(data.getMethodOk());
-/*  55 */     sb.append("\", \"");
-/*  56 */     sb.append(data.getMessage());
-/*  57 */     sb.append("\", \"");
-/*  58 */     sb.append(data.getMethodStorno());
-/*  59 */     sb.append("\",\"");
-/*  60 */     sb.append(nazev);
-/*  61 */     sb.append("\", '");
-/*  62 */     sb.append(data.getTyp());
-/*  63 */     sb.append("');</script>");
-/*     */     
-/*  65 */     return sb.toString();
-/*     */   }
-/*     */ 
-/*     */   
-/*     */   protected String zjistiIdFormulare() {
-/*  70 */     if (this.idForm != null) {
-/*  71 */       return this.idForm;
-/*     */     }
-/*  73 */     FormTag tag = (FormTag)getParentTag(FormTag.class);
-/*  74 */     if (tag != null) {
-/*  75 */       return tag.getId();
-/*     */     }
-/*  77 */     throw new RuntimeException("Nepodarilo se zjistit id formulare");
-/*     */   }
-/*     */ 
-/*     */ 
-/*     */   
-/*     */   public DialogData getDialogData() {
-/*  83 */     return this.dialogData;
-/*     */   }
-/*     */ 
-/*     */   
-/*     */   public void setDialogData(DialogData dialogData) {
-/*  88 */     this.dialogData = dialogData;
-/*     */   }
-/*     */ 
-/*     */   
-/*     */   public String getNazevPrepravky() {
-/*  93 */     return this.nazevPrepravky;
-/*     */   }
-/*     */ 
-/*     */   
-/*     */   public void setNazevPrepravky(String nazevPrepravky) {
-/*  98 */     this.nazevPrepravky = nazevPrepravky;
-/*     */   }
-/*     */ 
-/*     */   
-/*     */   public void setIdForm(String idForm) {
-/* 103 */     this.idForm = idForm;
-/*     */   }
-/*     */ 
-/*     */   
-/*     */   public String getIdForm() {
-/* 108 */     return this.idForm;
-/*     */   }
-/*     */ }
+import net.sourceforge.stripes.tag.FormTag;
+import net.sourceforge.stripes.tag.HtmlTagSupport;
 
 
-/* Location:              /Users/janpokorny/Downloads/datex_j2ee (kopie).jar!/cz/datexhk/web/tags/WarningDialogVeFormu.class
- * Java compiler version: 6 (50.0)
- * JD-Core Version:       1.1.3
- */
+public class WarningDialogVeFormu
+extends HtmlTagSupport
+{
+	private static final String DEFAULT_NAZEV_PREPRAVKY = "dialogData";
+	private DialogData dialogData;
+	private String nazevPrepravky;
+	private String idForm;
+	
+	public int doStartTag() throws JspException {
+		return 0;
+	}
+	
+	
+	
+	public int doEndTag() throws JspException {
+		DialogData data = this.dialogData;
+		String nazev = (getNazevPrepravky() == null) ? DEFAULT_NAZEV_PREPRAVKY : getNazevPrepravky();
+		if (data.getZobrazit().booleanValue()) {
+			try {
+				getPageContext().getOut().append(getHtml(data, nazev));
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		
+		return 0;
+	}
+	
+	
+	protected String getHtml(DialogData data, String nazev) {
+		StringBuilder sb = new StringBuilder(200);
+		sb.append("<script>warningMessage(\"");
+		sb.append(zjistiIdFormulare());
+		sb.append("\",\"");
+		sb.append(data.getMethodOk());
+		sb.append("\", \"");
+		sb.append(data.getMessage());
+		sb.append("\", \"");
+		sb.append(data.getMethodStorno());
+		sb.append("\",\"");
+		sb.append(nazev);
+		sb.append("\", '");
+		sb.append(data.getTyp());
+		sb.append("');</script>");
+		
+		return sb.toString();
+	}
+	
+	
+	protected String zjistiIdFormulare() {
+		if (this.idForm != null) {
+			return this.idForm;
+		}
+		FormTag tag = (FormTag)getParentTag(FormTag.class);
+		if (tag != null) {
+			return tag.getId();
+		}
+		throw new RuntimeException("Nepodarilo se zjistit id formulare");
+	}
+	
+	
+	
+	public DialogData getDialogData() {
+		return this.dialogData;
+	}
+	
+	
+	public void setDialogData(DialogData dialogData) {
+		this.dialogData = dialogData;
+	}
+	
+	
+	public String getNazevPrepravky() {
+		return this.nazevPrepravky;
+	}
+	
+	
+	public void setNazevPrepravky(String nazevPrepravky) {
+		this.nazevPrepravky = nazevPrepravky;
+	}
+	
+	
+	public void setIdForm(String idForm) {
+		this.idForm = idForm;
+	}
+	
+	
+	public String getIdForm() {
+		return this.idForm;
+	}
+}

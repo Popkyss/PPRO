@@ -125,6 +125,7 @@ public abstract class ASeznamBean<RadekSeznamu extends IRadekSeznamu> extends Ab
 		this.strankovanySeznam = strankovanySeznam;
 	}
 
+	@SuppressWarnings("deprecation")
 	public void nastaveniStrankyAction(String stranka) throws NumberFormatException {
 		if (log.isTraceEnabled()) {
 			log.trace("Odstrankovani: " + stranka);

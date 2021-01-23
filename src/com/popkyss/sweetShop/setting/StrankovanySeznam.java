@@ -70,6 +70,7 @@ public class StrankovanySeznam<RadekSeznamu> implements Serializable {
 	}
 
 	
+	@SuppressWarnings("deprecation")
 	public int getPocetRadkuStranky() {
 		String selected = (String) this.poctyRadkuNaStrance.getSelected();
 		if (selected.equals("ALL")) {

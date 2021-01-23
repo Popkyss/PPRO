@@ -120,6 +120,7 @@ public final class ReflectionUtils {
 	}
 
 	
+	@SuppressWarnings("deprecation")
 	public static Class<?> getAttributeClass(Class<?> clazz, String attribute) throws RuntimeException {
 		try {
 			Object o = clazz.newInstance();
@@ -134,6 +135,7 @@ public final class ReflectionUtils {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	public static Object getClassInstance(String className) {
 		Class<?> classObj = null;
 		try {

@@ -44,7 +44,7 @@ public abstract class ARequestActionSupport<Bean extends AbstractBean> extends A
 		createActionBeanInstance();
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked"})
+	@SuppressWarnings({ "rawtypes", "unchecked", "deprecation"})
 	protected void createActionBeanInstance() {
 		try {
 			Object o = ((Class) ((ParameterizedType) getClass().getGenericSuperclass())
