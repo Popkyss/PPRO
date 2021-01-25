@@ -90,7 +90,7 @@ public class SweetShopDaoFactory {
 	        return kosikDao;
 	    }
 	 
-	 public static ILoggerDao getLoginDao() {
+	 public static ILoggerDao getLoggerDao() {
 	        if (loggerDao == null) {
 	        	loggerDao = new HibernateLoggerDaoImpl(Logger.class);
 	        }

@@ -10,6 +10,10 @@
 	background-attachment: fixed;
 }
 
+#paticka table {
+	width: 100%;
+}
+
 .regUziv {
 	float: left; 
 	margin: 10px; 

@@ -5,7 +5,7 @@
 
 <f:setBundle var="g" basename="lng.global" scope="page" />
 
-<table width="100%">
+<table>
 	<tr>
 		<td align="left">
 			&copy; <f:message bundle="${g}" key="app.info.name" />

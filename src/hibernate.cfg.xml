@@ -14,27 +14,27 @@
 		<property name="hibernate.connection.username">DB2pokorja1</property>
 
 
-<!--  		<property name="hibernate.dbcp.initialSize">5</property> -->
-<!-- 	    <property name="hibernate.dbcp.maxActive">250</property> -->
-<!-- 	    <property name="hibernate.dbcp.maxIdle">50</property> -->
-<!-- 	    <property name="hibernate.dbcp.minIdle">5</property> -->
-<!-- 	    <property name="hibernate.dbcp.validationQuery">SELECT 1</property> -->
-<!-- 	    <property name="hibernate.dbcp.testOnBorrow">true</property> -->
-<!-- 	    <property name="hibernate.dbcp.ps.maxWait">3000</property> -->
+ 		<property name="hibernate.dbcp.initialSize">5</property>
+	    <property name="hibernate.dbcp.maxActive">250</property>
+	    <property name="hibernate.dbcp.maxIdle">50</property>
+	    <property name="hibernate.dbcp.minIdle">5</property>
+	    <property name="hibernate.dbcp.validationQuery">SELECT 1</property>
+	    <property name="hibernate.dbcp.testOnBorrow">true</property>
+	    <property name="hibernate.dbcp.ps.maxWait">3000</property>
 	    
-<!-- 	    <property name="hibernate.dbcp.removeAbandoned">true</property> -->
+	    <property name="hibernate.dbcp.removeAbandoned">true</property>
 		
-<!-- 		<property name="hibernate.dbcp.removeAbandonedTimeout">55</property> -->
-<!-- 		<property name="hibernate.dbcp.initialSize">30</property> -->
-<!-- 	    <property name="hibernate.dbcp.maxActive">250</property>      -->
-<!-- 	    <property name="hibernate.dbcp.minIdle">20</property>     -->
-<!-- 	    <property name="hibernate.dbcp.maxIdle">50</property>      -->
-<!-- 	    <property name="hibernate.dbcp.maxWait">10000</property>       -->
-<!-- 	    <property name="hibernate.dbcp.maxAge">600000</property>       -->
-<!-- 	    <property name="hibernate.dbcp.timeBetweenEvictionRunsMillis">5000</property>    -->
-<!-- 	    <property name="hibernate.dbcp.minEvictableIdleTimeMillis">60000</property>   -->
-<!-- 	    <property name="hibernate.dbcp.validationInterval">6000</property>           -->
-<!-- 	    <property name="hibernate.dbcp.validationQuery">SELECT 1</property>  -->
+		<property name="hibernate.dbcp.removeAbandonedTimeout">55</property>
+		<property name="hibernate.dbcp.initialSize">30</property>
+	    <property name="hibernate.dbcp.maxActive">250</property>     
+	    <property name="hibernate.dbcp.minIdle">20</property>    
+	    <property name="hibernate.dbcp.maxIdle">50</property>     
+	    <property name="hibernate.dbcp.maxWait">10000</property>      
+	    <property name="hibernate.dbcp.maxAge">600000</property>      
+	    <property name="hibernate.dbcp.timeBetweenEvictionRunsMillis">5000</property>   
+	    <property name="hibernate.dbcp.minEvictableIdleTimeMillis">60000</property>  
+	    <property name="hibernate.dbcp.validationInterval">6000</property>          
+	    <property name="hibernate.dbcp.validationQuery">SELECT 1</property> 
 		
 		<!-- DALSI NASTAVENI HIBERNATE -->
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
@@ -52,7 +52,7 @@
 		<property name="hibernate.c3p0.min_size">10</property> 
 		<property name="hibernate.c3p0.timeout">180</property>
 				
-		<property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+<!-- 		<property name="hibernate.c3p0.testConnectionOnCheckout">true</property> -->
 		
 <!-- 		<property name="hibernate.c3p0.acquireRetryAttempts">4</property> -->
 <!-- 		<property name="hibernate.c3p0.acquireRetryDelay">5000</property> -->

@@ -45,7 +45,7 @@ public class OpravneniImpl implements IOpravneni {
 	private final IZakaznikDao zakaznikDao = SweetShopDaoFactory.getZakaznikDao();
 	private final IKosikDao kosikDao = SweetShopDaoFactory.getKosikDao();
 	private final IAdresaDao adresaDao = SweetShopDaoFactory.getAdresaDao();
-	private final ILoggerDao loggerDao = SweetShopDaoFactory.getLoginDao();
+	private final ILoggerDao loggerDao = SweetShopDaoFactory.getLoggerDao();
 	private final IDateTime dateTime = BaseServiceFactory.getDateTime();
 	private final IPolozkaDao polozkaDao = SweetShopDaoFactory.getPolozkaDao();
 
