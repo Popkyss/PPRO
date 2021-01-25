@@ -25,7 +25,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-@SuppressWarnings("unused")
 public class ExportyXlsImpl implements IExportyXls {
 	public ByteArrayOutputStream exportSeznamXls(List<? extends Object> radky, List<FormatSloupce> sloupce,
 			Properties lng, Locale locale, List<KriteriumSestavy> kriteria) throws IOException, RuntimeException {

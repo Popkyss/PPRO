@@ -39,7 +39,6 @@ public class MessageUtils {
 		return stream;
 	}
 
-	@SuppressWarnings("resource")
 	public static boolean isFileResourceExists(String path) {
 		InputStream stream = null;
 		try {

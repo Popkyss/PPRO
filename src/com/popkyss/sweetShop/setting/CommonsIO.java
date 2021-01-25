@@ -24,7 +24,6 @@ import org.apache.log4j.Logger;
 public class CommonsIO {
 	private static Logger log = Logger.getLogger(CommonsIO.class);
 
-	@SuppressWarnings("resource")
 	public static Properties getProperties(String path) {
 		Properties prop = new Properties();
 		FileInputStream in = null;
@@ -50,7 +49,6 @@ public class CommonsIO {
 		}
 	}
 
-	@SuppressWarnings("resource")
 	public static Properties makeProperties(URL url) {
 		Properties props = new Properties();
 		if (url == null) {
@@ -125,7 +123,6 @@ public class CommonsIO {
 		writeTextToFile(text, file);
 	}
 
-	@SuppressWarnings("resource")
 	public static void writeTextToFile(String text, File file) {
 		Writer out = null;
 		try {
@@ -152,7 +149,6 @@ public class CommonsIO {
 		}
 	}
 
-	@SuppressWarnings("resource")
 	public static String readAllTextFromStream(InputStream stream) {
 		StringBuilder contents = new StringBuilder();
 

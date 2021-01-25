@@ -90,7 +90,6 @@ public abstract class AbstractFactory {
 		return null;
 	}
 
-	@SuppressWarnings("resource")
 	private static Properties getFactoryDefinition() throws IOException {
 		Properties properties = new Properties();
 		List<URL> defaultProperties = loadResources(FACTORY_DEFINITION_FILE,AbstractFactory.class.getClassLoader());

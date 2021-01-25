@@ -197,7 +197,6 @@ public final class StringUtils {
 		return result;
 	}
 
-	@SuppressWarnings("resource")
 	public static String replaceKeysInSourceCode(File file, Map<String, String> properties) throws IOException {
 		BufferedReader in = null;
 		try {
