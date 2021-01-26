@@ -24,7 +24,7 @@ public class LongList extends HtmlTagSupport {
 	public int doStartTag() throws JspException {
 		List<Object> val = value;
 		boolean title = useTitle == null ? true : useTitle;
-		if (!DatexCollections.isPrazdnaKolekce(val)) {
+		if (!PokyCollections.isPrazdnaKolekce(val)) {
 			if (val.size() > maxItem && title) {
 				int poradi = 1;
 				String seznam = "";
@@ -49,7 +49,7 @@ public class LongList extends HtmlTagSupport {
 	public int doEndTag() throws JspException {
 		List<Object> val = value;
 		boolean title = useTitle == null ? true : useTitle;
-		if (!DatexCollections.isPrazdnaKolekce(val)) {
+		if (!PokyCollections.isPrazdnaKolekce(val)) {
 			String seznam = "";
 			if (val.size() > maxItem) {
 				int poradi = 1;
@@ -71,7 +71,7 @@ public class LongList extends HtmlTagSupport {
 					writeCloseTag(pageContext.getOut(), "span");
 				}
 			} else {
-				seznam = DatexCollections.collectionToString(val, "");
+				seznam = PokyCollections.collectionToString(val, "");
 				writeTextContent(seznam);
 			}
 		}
