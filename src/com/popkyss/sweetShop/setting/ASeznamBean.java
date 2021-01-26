@@ -191,7 +191,7 @@ public abstract class ASeznamBean<RadekSeznamu extends IRadekSeznamu> extends Ab
 		}
 		SerializableComparator cmp = sl.getComparator();
 		if (cmp != null && ascending != sl.isAscending()) {
-			cmp = DatexCollections.reverseOrder(cmp);
+			cmp = PokyCollections.reverseOrder(cmp);
 		}
 		this.sloupecSeznam.addSloupecTrideni(sloupecName, ascending, cmp);
 		sort();

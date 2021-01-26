@@ -7,7 +7,7 @@ import java.util.Locale;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 
-import com.popkyss.sweetShop.setting.DatexCollections;
+import com.popkyss.sweetShop.setting.PokyCollections;
 import com.popkyss.sweetShop.setting.StringUtils;
 
 import net.sourceforge.stripes.localization.LocalizationUtility;
@@ -79,8 +79,8 @@ extends InputSelectTag
 		
 		String btnClass = "class=\"multiSelectButton\"";
 		String onclick = "onclick=\"multiSelectBoxScript(this, '" + this.idDiv + "', " + (this.width.intValue() - 7) + ");\"";
-		String value = "value=\"" + DatexCollections.collectionToString(this.selectedShortValues, "", " | ") + "\"";
-		String title = "title=\"" + DatexCollections.collectionToString(this.selectedLongValues, "", "&#013;") + "\"";
+		String value = "value=\"" + PokyCollections.collectionToString(this.selectedShortValues, "", " | ") + "\"";
+		String title = "title=\"" + PokyCollections.collectionToString(this.selectedLongValues, "", "&#013;") + "\"";
 		
 		writeToJsp("<input type=\"button\" style=\"width:" + this.width + "px;\" " + btnClass + " " + onclick + " " + value + " " + title + " />");
 		

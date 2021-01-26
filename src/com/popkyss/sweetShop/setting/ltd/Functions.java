@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Random;
 
-import com.popkyss.sweetShop.setting.DatexCollections;
+import com.popkyss.sweetShop.setting.PokyCollections;
 import com.popkyss.sweetShop.setting.StringUtils;
 
 import net.sourceforge.stripes.util.Base64;
@@ -151,12 +151,12 @@ public class Functions
 	
 	
 	public static String collectionToString(Collection<?> collection) {
-		return DatexCollections.collectionToString(collection, "", ", ");
+		return PokyCollections.collectionToString(collection, "", ", ");
 	}
 	
 	
 	public static String collectionToString2(Collection<?> collection, String oddelovac) {
-		return DatexCollections.collectionToString(collection, "", oddelovac);
+		return PokyCollections.collectionToString(collection, "", oddelovac);
 	}
 }
 

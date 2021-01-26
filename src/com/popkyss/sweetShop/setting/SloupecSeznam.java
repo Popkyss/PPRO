@@ -56,11 +56,11 @@ public class SloupecSeznam implements Serializable {
 		Sloupec sl = get(sloupecName);
 		if (!sl.isTrideni()) {
 			addSloupecTrideni(sloupecName, !sl.isAscending(),
-					(sl.getComparator() == null) ? null : DatexCollections.reverseOrder(sl.getComparator()));
+					(sl.getComparator() == null) ? null : PokyCollections.reverseOrder(sl.getComparator()));
 		} else {
 
 			sl.setAscending(!sl.isAscending());
-			sl.setComparator((sl.getComparator() == null) ? null : DatexCollections.reverseOrder(sl.getComparator()));
+			sl.setComparator((sl.getComparator() == null) ? null : PokyCollections.reverseOrder(sl.getComparator()));
 			put(sloupecName, sl);
 		}
 	}

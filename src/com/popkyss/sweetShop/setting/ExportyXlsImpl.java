@@ -218,7 +218,7 @@ public class ExportyXlsImpl implements IExportyXls {
 					} else if (hodnotaSloupce instanceof Konstanty.IVycet) {
 						hodnotaSloupce = ((Konstanty.IVycet) hodnotaSloupce).getPopisek();
 					} else if (hodnotaSloupce instanceof Collection) {
-						hodnotaSloupce = DatexCollections.collectionToString((Collection) hodnotaSloupce, "");
+						hodnotaSloupce = PokyCollections.collectionToString((Collection) hodnotaSloupce, "");
 					}
 
 					nastavHodnotuBunky(cell, hodnotaSloupce);

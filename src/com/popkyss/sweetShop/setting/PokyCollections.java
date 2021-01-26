@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class DatexCollections {
+public class PokyCollections {
 	@SuppressWarnings("unchecked")
 	public static <T> Collection<T> clone(Collection<T> source) {
 		Collection<T> clone = getNewCollectionInstance(source);

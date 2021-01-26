@@ -182,7 +182,7 @@ public class ExportyPdfImpl implements IExportyPdf {
 			if (hodnota instanceof Konstanty.IVycet)
 				return ((Konstanty.IVycet) hodnota).getPopisek();
 			if (hodnota instanceof Collection)
-				return DatexCollections.collectionToString((Collection) hodnota, "");
+				return PokyCollections.collectionToString((Collection) hodnota, "");
 		}
 		return hodnota.toString();
 	}

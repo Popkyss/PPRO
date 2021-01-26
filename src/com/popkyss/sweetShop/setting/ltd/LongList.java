@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.servlet.jsp.JspException;
 
-import com.popkyss.sweetShop.setting.DatexCollections;
+import com.popkyss.sweetShop.setting.PokyCollections;
 
 import net.sourceforge.stripes.tag.HtmlTagSupport;
 import net.sourceforge.stripes.util.HtmlUtil;

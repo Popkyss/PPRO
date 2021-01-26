@@ -24,31 +24,31 @@ public class XlsCellStyleFactory {
 	}
 
 	public CellStyle getDateStyle(short zarovnani, String maska) {
-		if (DatexCollections.getSafeFromLut(this.dateStyles,
+		if (PokyCollections.getSafeFromLut(this.dateStyles,
 				new Object[] { Short.valueOf(zarovnani), maska }) == null) {
 			CellStyle dateStyle = this.sesit.createCellStyle();
 			dateStyle.cloneStyleFrom(getTextStyle(zarovnani));
 			DataFormat format = this.sesit.createDataFormat();
 			dateStyle.setDataFormat(format.getFormat(maska));
-			DatexCollections.putSafeIntoLut(this.dateStyles, dateStyle,
+			PokyCollections.putSafeIntoLut(this.dateStyles, dateStyle,
 					new Object[] { Short.valueOf(zarovnani), maska });
 		}
-		return (CellStyle) DatexCollections.getSafeFromLut(this.dateStyles,
+		return (CellStyle) PokyCollections.getSafeFromLut(this.dateStyles,
 				new Object[] { Short.valueOf(zarovnani), maska });
 	}
 
 	public CellStyle getNumericStyle(short zarovnani, String maska) {
-		if (DatexCollections.getSafeFromLut(this.numericStyles,
+		if (PokyCollections.getSafeFromLut(this.numericStyles,
 				new Object[] { Short.valueOf(zarovnani), maska }) == null) {
 			CellStyle numericStyle = this.sesit.createCellStyle();
 			numericStyle.cloneStyleFrom(getTextStyle(zarovnani));
 			DataFormat format = this.sesit.createDataFormat();
 			numericStyle.setDataFormat(format.getFormat(maska));
 
-			DatexCollections.putSafeIntoLut(this.numericStyles, numericStyle,
+			PokyCollections.putSafeIntoLut(this.numericStyles, numericStyle,
 					new Object[] { Short.valueOf(zarovnani), maska });
 		}
-		return (CellStyle) DatexCollections.getSafeFromLut(this.numericStyles,
+		return (CellStyle) PokyCollections.getSafeFromLut(this.numericStyles,
 				new Object[] { Short.valueOf(zarovnani), maska });
 	}
 

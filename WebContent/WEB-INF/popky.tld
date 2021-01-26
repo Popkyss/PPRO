@@ -2920,7 +2920,7 @@ visibility.
 	</function>
 
 	<function>
-		<description>Prevede kolekci na retezec podle logiky metod knihovni tridy DatexCollections. Pro spravne fungovani 
+		<description>Prevede kolekci na retezec podle logiky metod knihovni tridy PokyCollections. Pro spravne fungovani 
    			je vhodne, aby prvky umistene v kolekci implementovaly nejak rozumne metodu toString.</description>
 		<name>collectionToString</name>
 		<function-class>com.popkyss.sweetShop.setting.ltd.Functions</function-class>
@@ -2929,7 +2929,7 @@ visibility.
 	</function>
 
 	<function>
-		<description>Prevede kolekci na retezec podle logiky metod knihovni tridy DatexCollections. Pro spravne fungovani 
+		<description>Prevede kolekci na retezec podle logiky metod knihovni tridy PokyCollections. Pro spravne fungovani 
    			je vhodne, aby prvky umistene v kolekci implementovaly nejak rozumne metodu toString. Tato verze prijima jako druhy
    			parametr retezec oddelovace</description>
 		<name>collectionToString2</name>
